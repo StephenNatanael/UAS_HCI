@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="Assets/booking_style.css">
+    <title>Live Longer</title>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</head>
+    
+<body>
+    <script>
+        function validateBook(){
+            var tanggal = document.getElementsByName('tanggal')[0].value;
+            var jam = document.getElementsByName('jam')[0].value;
+            var spec = document.getElementsByName('spec')[0].value;
+            var doc = document.getElementsByName('doct')[0].value;
+            var checkBtn = document.getElementById('checkBtn').checked;
+            alert(doc);
+            if (tanggal==null||tanggal==""){
+                alert("Date can't be empty");
+                return false;
+            }
+            else if(jam==null||jam==""){
+                alert("Time can't be empty");
+                return false;
+            }
+            else if(spec=="Select"){
+                alert("Specialist can't be empty");
+                return false;
+            }
+            else if(doc=="Select"){
+                alert("Doctor can't be empty");
+                return false;
+            }
+            else if(checkBtn==false){
+                alert("You must agree on T&C")
+            }
+            else{
+                alert("Booked!");
+                window.open("Booking.html")
+                window.close();
+            }
+        }
+    </script>
+    <header>
+        <input type="checkbox" id="check">
+        <label for="check" class="checkbtn">
+            <i class="fas fa-bars"></i>
+        </label>
+        <div class="logo">
+        <img src="Assets/Picture/Logo_HCI.png" class="logo">
+        </div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="Booking.html">Booking</a></li>
+            <li><a href="schedule.html">Schedule</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="login.html" class="border">Login</a></li>
+        </ul>
+    </header>
+    <main>
+        <div class="data">
+            <p class="textabove">Open Hours : 10.00 - 22.00</p>
+            <img src="Assets/Picture/Appointment.png" class="appo">
+            <div class="pengisianSide">
+                <div class="form">
+                    <p class="textabove">Book Date</p>
+                    <input type="date" id="pendek" name="tanggal" required><br>
+                </div>
+                <div class="form">
+                    <p class="textabove">Time</p>
+                    <input type="time" id="pendek" name="jam" placeholder="HH:MM" min="10:00" max="22:00" required>
+                </div>
+                <br>
+            </div>
+            
+            <div class="form">
+                <p class="textabove">Specialist</p>
+                <select id="panjang" name="spec" >
+                    <option value="Select">Select</option>
+                    <option value="Dentistry">Dentistry</option>
+                    <option value="General Practicioner">General Practicioner</option>
+                    <option value="Pediatrician">Pediatrician</option>
+                </select>
+            </div>
+
+            <div class="form">
+                <p class="textabove">Doctor</p>
+                <select id="panjang" name="doct" >
+                    <option value="Select">Select</option>
+                    <option value="Dr.Aurellia">Dr. Aurellia</option>
+                    <option value="Dr. Mikmik">Dr. Mikmik</option>
+                    <option value="Dr. Zulkeef">Dr. Zulkeef</option>
+                    <option value="Dr. Theo">Dr. Theo</option>           
+                </select>
+            </div>
+            <br>
+            <img src="Assets/Picture/booking.png" class="mark">
+            <input type="checkbox" id="checkBtn">
+            <img src="Assets/Picture/T&C.png"><br><br><br>
+            
+            <div class="BookNow"><button onclick="validateBook()">Book Now</button></div>          
+        </div>
+    </main>
+</body>

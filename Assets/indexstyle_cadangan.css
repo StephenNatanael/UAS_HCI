@@ -1,0 +1,52 @@
+header{
+    overflow: hidden;
+    background-color: ;
+    padding: 20px 10px;
+    height: 60px;
+    box-shadow: 5px 10px 18px #999999;
+    z-index: 100;
+}
+
+.logo{
+    width: 250px;
+    padding-left: 10px;
+    float: left;
+}
+
+header ul{
+    float: right;
+    text-align: center;
+}
+
+header li{
+    float: left;
+    list-style: none;    
+}
+header a{
+    font-family: "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Arial, sans-serif; 
+    font-size: 17px; 
+    font-style: normal; 
+    font-variant: normal;
+    font-weight: 350;
+    text-decoration: none;
+    color: black;
+    padding-right: 71px;
+    height: 20px;
+}
+
+.border{
+    color: white;
+    background: #31486F;
+    padding: 10px;
+    padding-left: 50px;
+    padding-right: 50px;
+    border-radius: 50px;
+    box-shadow: 1px 8px 10px #999999;
+}
+
+main{
+    
+}
+main img{
+    
+}

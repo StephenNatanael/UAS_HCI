@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="Assets/login_style.css">
+    <title>Live Longer</title>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</head>
+    
+<body>
+    <script>
+        function validateBook(){
+            var fname = document.getElementsByName('fname')[0].value;
+            var lname = document.getElementsByName('lname')[0].value;
+            var pass = document.getElementsByName('pass')[0].value;
+            if (fname!="admin"){
+                alert("First Name wrong");
+                return false;
+            }
+            else if(lname!="ganteng"){
+                alert("Last Name wrong");
+                return false;
+            }
+            else if(pass!="admin"){
+                alert("Password wrong");
+                return false;
+            }
+            
+            else{
+                alert("Log In Success!");
+                window.open("Booking.html")
+                window.close();
+            }
+        }
+    </script>
+    <header>
+        <input type="checkbox" id="check">
+        <label for="check" class="checkbtn">
+            <i class="fas fa-bars"></i>
+        </label>
+        <div class="logo">
+        <img src="Assets/Picture/Logo_HCI.png" class="logo">
+        </div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="Booking.html">Booking</a></li>
+            <li><a href="schedule.html">Schedule</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="login.html" class="border">Login</a></li>
+        </ul>
+    </header>
+    <main>
+        <div class="data">
+            
+            <img src="Assets/Picture/Login.png" class="appo">
+            
+            <div class="form">
+                <p class="textabove">First Name</p>
+                <input type="text" id="pendek" name="fname" placeholder="ex : Jane"><br>
+            </div>
+            
+            <div class="form">
+                <p class="textabove">Last Name</p>
+                <input type="text" id="pendek" name="lname" placeholder="ex : Doe">
+            </div>
+            
+            <div class="form">
+                <p class="textabove">Password</p>
+                <input type="password" id="pendek" name="pass" placeholder="ex: anonymous"><br>
+            </div>
+            <br><br>
+            <div class="BookNow"><button onclick="validateBook()">Login</button></div>
+        </div>
+        <img src="Assets/Picture/Login_mark.png" class="mark">
+    </main>
+</body>

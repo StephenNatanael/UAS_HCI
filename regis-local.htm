@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="Assets/register_style.css">
+    <title>Live Longer</title>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</head>
+    
+<body>
+    <script>
+        function validateBook(){
+            
+            var fname = document.getElementsByName('fname')[0].value;
+            var lname = document.getElementsByName('lname')[0].value;
+            var pass = document.getElementsByName('pass')[0].value;
+            var cpass = document.getElementsByName('cpass')[0].value;
+            var email = document.getElementsByName('email')[0].value;
+            var gender = document.getElementsByName('gender')[0].value;
+            var addr = document.getElementsByName('add')[0].value;
+            var phNum = document.getElementsByName('phNum')[0].value;
+            var date = document.getElementsByName('tanggal')[0].value;
+            var checkBtn = document.getElementById('checkBtn').checked;
+            
+            if (fname==null||fname==""){
+                alert("First Name can't be empty");
+                return false;
+            }
+            else if (lname==null||lname==""){
+                alert("Last Name can't be empty");
+                return false;
+            }
+            else if (pass==null||pass==""){
+                alert("Password can't be empty");
+                return false;
+            }
+            else if (cpass==null||cpass==""){
+                alert("Password can't be empty");
+                return false;
+            }
+            else if (email==null||email==""){
+                alert("Email can't be empty");
+                return false;
+            }
+            else if (gender=="empty"){
+                alert("Gender can't be empty");
+                return false;
+            }
+            else if (addr==null||addr==""){
+                alert("Address can't be empty");
+                return false;
+            }
+            else if (phNum==null||phNum==""){
+                alert("Phone can't be empty");
+                return false;
+            }
+            else if (date==null||date==""){
+                alert("Date can't be empty");
+                return false;
+            }
+            else if(checkBtn==false){
+                alert("You must agree on T&C")
+            }
+            else{
+                alert("Booked!");
+                window.open("Booking.html")
+                window.close();
+            }
+            localStorage.setItem("value",fname);
+        }
+    </script>
+    <header>
+        <input type="checkbox" id="check">
+        <label for="check" class="checkbtn">
+            <i class="fas fa-bars"></i>
+        </label>
+        <div class="logo">
+        <img src="Assets/Picture/Logo_HCI.png" class="logo">
+        </div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#">Booking</a></li>
+            <li><a href="#">Schedule</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#" class="border">Login</a></li>
+        </ul>
+    </header>
+    <main>
+        <div class="data">
+            <form action="login-local.htm">
+            <img src="Assets/Picture/register.png" class="appo">
+            
+            <div class="pengisianSide">
+                <div class="form">
+                    <p class="textabove">First Name</p>
+                    <input type="text" id="pendek" name="fname" placeholder="ex : Jane"><br>
+                </div>
+                <div class="form">
+                    <p class="textabove">Last Name</p>
+                    <input type="text" id="pendek" name="lname" placeholder="ex : Doe">
+                </div>
+                <br>
+            </div>
+            
+            <div class="pengisianSide">
+                <div class="form">
+                    <p class="textabove">Password</p>
+                    <input type="password" id="pendek" name="pass" placeholder="ex: anonymous"><br>
+                </div>
+                <div class="form">
+                    <p class="textabove">Confirm Password</p>
+                    <input type="password" id="pendek" name="cpass" placeholder="ex : anonymous">
+                </div>
+                <br>
+            </div>
+            
+            <div class="pengisianSide">
+                <div class="form">
+                    <p class="textabove">Email</p>
+                    <input type="email" id="pendek" name="email" placeholder="example@domain.com"><br>
+                </div>
+                <div class="form">
+                    <p class="textabove">Gender</p>
+                    <input type="radio" id="pendek" name="gender" value="empty" hidden>
+                    <input type="radio" id="pendek" name="gender" value="male">
+                    <label for="male">Male</label>
+                    
+                    <input type="radio" id="pendek" name="gender" value="female">
+                    <label for="female">Female</label>
+                </div>
+                <br>
+            </div>
+            
+            <div class="pengisianSide">
+                <div class="form">
+                    <p class="textabove">Address</p>
+                    <input type="text" id="pendek" name="add" placeholder="123 Street">
+                </div>
+                <div class="form">
+                    <p class="textabove">Phone Number</p>
+                    <input type="tel" id="pendek" name="phNum" placeholder="0812-3456-7890" pattern="[0-9]{4}-[0-9]{4}-[0-9]{4}" required>
+                </div>
+                <br>
+            </div>
+            
+            <div class="pengisian">
+                <div class="form">
+                    <p class="textabove">Date of Birth</p>
+                    <input type="date" id="pendek" name="tanggal" required><br>
+                </div>
+
+                <br>
+                <input type="checkbox" id="checkBtn">
+                <img src="Assets/Picture/T&C.png"><br><br><br>
+                <div class="BookNow"><button onclick="validateBook()">Register Now</button></div>
+            </div>
+            </form>
+            
+        </div>
+    </main>
+</body>
